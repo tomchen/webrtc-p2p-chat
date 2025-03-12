@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC P2P Chat</title>
+
+    <link rel="stylesheet" type="text/css" href="./src/index.scss" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>WebRTC P2P Chat</h1>
+
+      <div class="connection-controls">
+        <div class="tab-container">
+          <div class="tab active" data-tab="initiator">
+            Create Connection (Initiator)
+          </div>
+          <div class="tab" data-tab="responder">
+            Join Connection (Responder)
+          </div>
+        </div>
+
+        <div id="initiatorTab" class="tab-content active">
+          <div class="step">
+            <h3>Step 1: Create Connection Offer</h3>
+            <button id="createOfferBtn">Create Offer</button>
+            <div
+              id="offerDisplay"
+              class="code-display"
+              style="display: none"
+            ></div>
+            <button id="copyOfferBtn" class="copy-button" style="display: none">
+              Copy Offer
+            </button>
+            <p>Send this offer to the person you want to chat with.</p>
+          </div>
+
+          <div class="step" id="answerStep" style="display: none">
+            <h3>Step 3: Receive Answer</h3>
+            <p>Paste the answer you received:</p>
+            <textarea
+              id="answerInput"
+              rows="3"
+              style="width: 100%; margin-bottom: 10px"
+              placeholder="Paste the Answer here..."
+            ></textarea>
+            <button id="setAnswerBtn">Complete Connection</button>
+          </div>
+        </div>
+
+        <div id="responderTab" class="tab-content">
+          <div class="step">
+            <h3>Step 2: Join Existing Connection</h3>
+            <p>Paste the offer you received:</p>
+            <textarea
+              id="offerInput"
+              rows="3"
+              style="width: 100%; margin-bottom: 10px"
+              placeholder="Paste the Offer here..."
+            ></textarea>
+            <button id="createAnswerBtn">Create Answer</button>
+            <div
+              id="answerDisplay"
+              class="code-display"
+              style="display: none"
+            ></div>
+            <button
+              id="copyAnswerBtn"
+              class="copy-button"
+              style="display: none"
+            >
+              Copy Answer
+            </button>
+            <p>Send this answer back to the person who sent you the offer.</p>
+          </div>
+        </div>
+
+        <p id="statusMessage">Status: Not connected</p>
+      </div>
+
+      <div class="chat-area">
+        <h2>Chat</h2>
+        <div id="messages"></div>
+        <div class="message-input">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Type your message here..."
+            disabled
+          />
+          <button id="sendBtn" disabled>Send</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/index.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+:root {
+  color-scheme: light dark;
+}
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.connection-controls {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.step {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  & h3 {
+    margin-top: 0;
+    color: #2196f3;
+  }
+}
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+#messages {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  height: 300px;
+}
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+}
+.received {
+  background-color: #e1f5fe;
+  align-self: flex-start;
+}
+.sent {
+  background-color: #e8f5e9;
+  align-self: flex-end;
+  text-align: right;
+}
+.message-input {
+  display: flex;
+}
+#messageinput {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #45a049;
+  }
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}
+.copy-button {
+  margin-left: 10px;
+  background-color: #2196f3;
+  &:hover {
+    background-color: #0b7dda;
+  }
+}
+#statusMessage {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2196f3;
+}
+.code-display {
+  background-color: #f8f9fa;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin: 8px 0;
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 14px;
+}
+.tab-container {
+  display: flex;
+  margin-bottom: 15px;
+}
+.tab {
+  padding: 10px 15px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  margin-right: 5px;
+  &.active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+  }
+}
+.tab-content {
+  display: none;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 5px;
+  &.active {
+    display: block;
+  }
+}

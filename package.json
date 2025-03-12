@@ -1,0 +1,32 @@
+{
+  "name": "webrtc-p2p-chat",
+  "version": "0.0.0",
+  "description": "WebRTC P2P Chat",
+  "keywords": [
+    "test",
+    "webrtc",
+    "chat"
+  ],
+  "homepage": "https://tomchen.github.io/webrtc-p2p-chat",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomchen/webrtc-p2p-chat"
+  },
+  "license": "MIT",
+  "author": "Tom Chen <tomchen.org>",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev",
+    "preview": "vite preview",
+    "version": "bun scripts/bump.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "sass": "^1.85.1",
+    "semver-ts": "^1.0.2",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1"
+  }
+}
